@@ -47,7 +47,7 @@ export default function Home() {
                 initial={{ translateY: -100 }}
                 animate={{ translateY: 0 }}
                 transition={{ duration: 0.5, delay: 1, ease: cubicBezier(0.4, 0, 0.2, 1) }}
-                className="relative top-0 z-50 grid h-fit grid-cols-[inherit] border-b bg-background/50 py-3 shadow-2xl shadow-background/50 backdrop-blur-xl [grid-column:page]"
+                className="relative top-0 z-50 grid h-fit grid-cols-[inherit] border-b !bg-background/50 py-3 shadow-2xl shadow-background/50 [grid-column:page]"
             >
                 <header className="flex items-end justify-between [grid-column:content]">
                     <Typography variant="h1">Diorama</Typography>
@@ -63,7 +63,10 @@ export default function Home() {
                             asChild
                         >
                             <kbd>
-                                <span className="text-xs">⌘</span>K
+                                <span className="text-xs">
+                                    {/Mac/.test(navigator.userAgent) ? "⌘" : "ctrl"}
+                                </span>{" "}
+                                K
                             </kbd>
                         </Typography>
                         <Typography variant="muted">to search dioramas</Typography>
@@ -73,14 +76,11 @@ export default function Home() {
                         onOpenChange={setCommandOpen}
                     >
                         <CommandInput placeholder="Search diorama..." />
-                        <CommandList>
+                        <CommandList className="py-2">
                             <CommandEmpty>No results found.</CommandEmpty>
                             <CommandGroup>
                                 <CommandItem>
-                                    <span>Calendar</span>
-                                </CommandItem>
-                                <CommandItem>
-                                    <span>Calendar2</span>
+                                    <span>WIP</span>
                                 </CommandItem>
                             </CommandGroup>
                         </CommandList>
