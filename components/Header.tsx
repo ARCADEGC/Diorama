@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import { useState, useEffect } from "react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -30,7 +30,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 
-import { dioramaUrlAtom } from "@/app/page";
+import { dioramaUrlAtom } from "@/Atoms";
 
 const formSchema = z.object({
     url: z.string().min(18, "URL must be at least 18 characters long"),
@@ -68,7 +68,11 @@ function Header() {
         <motion.div
             initial={{ translateY: -100 }}
             animate={{ translateY: 0 }}
-            transition={{ duration: 0.5, delay: 1.75, ease: cubicBezier(0.4, 0, 0.2, 1) }}
+            transition={{
+                duration: 0.5,
+                delay: 1.75,
+                ease: cubicBezier(0.4, 0, 0.2, 1),
+            }}
             className="relative top-0 z-50 grid h-fit grid-cols-[inherit] border-b !bg-background/50 py-3 shadow-2xl shadow-background/50 [grid-column:page]"
         >
             <header className="flex items-center justify-between [grid-column:content]">

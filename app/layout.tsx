@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Provider } from "jotai";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -20,7 +21,7 @@ export default function RootLayout({
                 ></link>
             </head>
             <body className="grid grid-cols-[[page-start]_minmax(var(--inline-padding),_1fr)_[content-start]_min(100%_-_var(--inline-padding)_*_2,_1400px)_[content-end]_minmax(var(--inline-padding),_1fr)_[page-end]] bg-background font-serif [--inline-padding:_1rem]">
-                {children}
+                <Provider>{children}</Provider>
             </body>
         </html>
     );

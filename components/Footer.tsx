@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { motion, cubicBezier } from "framer-motion";
@@ -14,7 +12,11 @@ function Footer() {
         <motion.div
             initial={{ translateY: 100 }}
             animate={{ translateY: 0 }}
-            transition={{ duration: 0.5, delay: 2.25, ease: cubicBezier(0.4, 0, 0.2, 1) }}
+            transition={{
+                duration: 0.5,
+                delay: 2.25,
+                ease: cubicBezier(0.4, 0, 0.2, 1),
+            }}
             className="bottom-0 mt-auto grid h-fit grid-cols-[inherit] border-t bg-background/50 py-4 shadow-2xl shadow-background/50 backdrop-blur-lg [grid-column:page]"
         >
             <footer className="flex items-center justify-between [grid-column:content]">
