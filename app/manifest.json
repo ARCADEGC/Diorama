@@ -1,6 +1,6 @@
 {
-    "name": "My Awesome PWA app",
-    "short_name": "PWA App",
+    "name": "Diorama",
+    "short_name": "Diorama",
     "icons": [
         {
             "src": "/icon512_maskable.png",
